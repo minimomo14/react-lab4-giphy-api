@@ -2,7 +2,7 @@ import React, { FormEvent, useState } from 'react'
 import { Giphy } from "../models/Giphy"
 
 interface Props {
-    onSubmit: (gifs:Giphy) => void;
+    onSubmit: (gifs:string) => void;
 
 }
 
@@ -12,17 +12,19 @@ export default function SearchForm({onSubmit}: Props) {
     function handleOnSubmit(e: FormEvent) {
         e.preventDefault();
         onSubmit(search);
-       
-
     }
-
-       
 
     return (
         <div className='SearchForm' onSubmit={handleOnSubmit}>
-            <form action="">
+            <form action="" className='inputForm'>
             <label>Search for a GIF</label>
-            <input type="text" />
+            <input 
+            type="text"
+            name='search'
+            placeholder='search'
+            value={search}
+            onChange={(e) => setSearch(e.target.value)} 
+            />
             <button type="submit">Search</button>
             <br></br>
 

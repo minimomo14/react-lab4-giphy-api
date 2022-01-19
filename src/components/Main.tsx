@@ -19,19 +19,18 @@ export default function Main() {
          if ( searchTerm === "") {
            fetchGiphyApiTrending().then((data) => setGifs(data))
             } else {
-                fetchGiphyApiSearch(searchTerm).then((data) => setSearchTerm(data))
+                fetchGiphyApiSearch(searchTerm).then((data) => setGifs(data))
             }
         }, [searchTerm]);      
 
-        function handleOnSubmit(gifs:Giphy) {
+        function handleOnSubmit(gifs:string) {
             setSearchTerm(gifs);
         }
 
     return (
         <div>
             <SearchForm onSubmit={handleOnSubmit}/>
-            <ResultsList gifs={gifs}/>
-                       
+            <ResultsList gifs={gifs}/>              
         </div>
     )
 }
