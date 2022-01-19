@@ -18,6 +18,8 @@ export default function SearchForm({onSubmit}: Props) {
         <div className='SearchForm' onSubmit={handleOnSubmit}>
             <form action="" className='inputForm'>
             <label>Search for a GIF</label>
+            <br></br>
+            
             <input 
             type="text"
             name='search'

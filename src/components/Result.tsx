@@ -13,6 +13,7 @@ export default function Result({ gif }: GifProp) {
       <div key={gif.id}>
         <h3>{gif.title}</h3>
         <img src={gif.images.original.url} alt="" />
+        <br></br>
         <a href={gif.url}>link to GIPHY</a>
       </div>
     </div>
