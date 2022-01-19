@@ -1,14 +1,17 @@
 export interface GiphyResponse {
-    data: Data[];
+  data: Giphy[];
+}
+export interface Giphy {
+    id: number;
+  type: string;
+  title: string;
+  url: string;
+  images: Images;
+}
+export interface Images {
+  original: OriginalImage;
 }
 
-export interface Data {
-        type: string;
-        title: string;
-        url: string;
-        images: {
-            original: {
-                url: string;
-            };
-        };
-    };
+export interface OriginalImage {
+  url: string;
+}
